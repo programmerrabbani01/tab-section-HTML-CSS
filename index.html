@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabbed Section</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section id="tabSection">
+      <div class="container">
+        <div class="mainTabs">
+          <div class="tabs">
+            <div class="tab active" onclick="showContent('description')">
+              Product Description
+            </div>
+            <div class="tab" onclick="showContent('review')">Review</div>
+            <div class="tab" onclick="showContent('how-to-use')">
+              How To Use
+            </div>
+            <div class="tab" onclick="showContent('faq')">FAQ</div>
+            <div class="tab" onclick="showContent('ingredients')">
+              Ingredients
+            </div>
+            <div class="tab" onclick="showContent('warnings')">Warnings</div>
+          </div>
+          <div class="content">
+            <div id="description" class="content-section active">
+              <h2>Product Description</h2>
+              <p>
+                Combatrin Chocolate Squares provide a convenient and effective
+                way to address worm infections in both adults and children. With
+                a delicious chocolate flavor, these squares make deworming a
+                hassle-free experience.
+              </p>
+            </div>
+            <div id="review" class="content-section">
+              <h2>Review</h2>
+              <p>Reviews content goes here...</p>
+            </div>
+            <div id="how-to-use" class="content-section">
+              <h2>How To Use</h2>
+              <p>Usage instructions go here...</p>
+            </div>
+            <div id="faq" class="content-section">
+              <h2>FAQ</h2>
+              <p>FAQ content goes here...</p>
+            </div>
+            <div id="ingredients" class="content-section">
+              <h2>Ingredients</h2>
+              <p>Ingredients list goes here...</p>
+            </div>
+            <div id="warnings" class="content-section">
+              <h2>Warnings</h2>
+              <p>Warning details go here...</p>
+            </div>
+            <div id="shipping" class="content-section">
+              <h2>Shipping</h2>
+              <p>Shipping information goes here...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showContent(sectionId) {
+        // Hide all content sections
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        // Show the selected content section
+        document.getElementById(sectionId).classList.add("active");
+
+        // Remove 'active' class from all tabs
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+        // Add 'active' class to the clicked tab
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
